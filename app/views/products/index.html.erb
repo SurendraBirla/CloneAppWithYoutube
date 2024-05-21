@@ -1,0 +1,20 @@
+<br>
+<div class="product-container">
+<% @products.each do |product| %>  
+  <%= link_to product_path(product) do %>
+    <div class="product-box">
+      <% if product.image.attached? %>
+        <%= image_tag(product.image, size: '100x100') %>
+      <% end %> <br>
+        <%= product.name %> <br>
+        <%= product.price %> 
+    </div>
+  <% end %>
+<% end %>
+</div>
+
+
+<% if current_user.role_id == @role.id %>
+  <%= link_to 'create new Product', new_product_path %>
+<% end %>
+<br>

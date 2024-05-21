@@ -1,0 +1,13 @@
+<h3> Your Orders </h3>
+
+<div class="order-container">
+<% @buys.each do |buy| %>  
+  <div class="product-box">
+    <% if buy.product.image.attached? %>
+      <%= image_tag(buy.product.image, size: '100x100') %>
+    <% end %>
+    <p class="marg_ord"><%= buy.product.name %></p>
+    <p class="marg_ord"><%= buy.product.price %></p>
+    </div>
+<% end %>
+</div>

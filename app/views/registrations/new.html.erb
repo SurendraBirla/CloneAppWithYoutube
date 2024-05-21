@@ -1,0 +1,49 @@
+<div class="text-center">
+  <h1>Registration</h1>
+
+  <%= form_with(model: @user, url: registrations_path, local: true) do |f| %>
+
+    <% if f.object.errors.full_messages.any? %>
+      <ul class='error'>
+        <% f.object.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div class='row'>
+      <%= f.label :Name %>
+      <%= f.text_field :name, placeholder: 'Please enter name' %>
+    </div><br>
+
+    <div>
+      <%= f.label :UserName %>
+      <%= f.text_field :username, placeholder: 'Please enter username' %>
+    </div><br>
+
+    <div>
+    <%= f.label :Mobile_Nu %>
+    <%= f.telephone_field :mobile_nu, placeholder: 'Please enter mobile_nu' %>
+    </div><br>
+
+    <div class='row'>
+      <%= f.label :Email %>
+      <%= f.email_field :email, placeholder: 'Please enter email id' %>
+    </div><br>
+
+    <div class='row'>
+      <%= f.label :Password %>
+      <%= f.password_field :password, placeholder: 'Please enter password' %>
+    </div><br>
+
+    <div class='row'>
+      <%= f.label :Password_confirmation %>
+      <%= f.password_field :password_confirmation, placeholder: 'Please enter password confirmation' %>
+    </div><br>
+
+    <div class='row'>
+      <%= f.submit 'Sign Up' %>
+    </div>
+  <% end %> <br>
+  <%= link_to 'Log In', new_session_path %><br>
+</div>

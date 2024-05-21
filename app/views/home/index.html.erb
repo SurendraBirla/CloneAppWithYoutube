@@ -1,0 +1,5 @@
+<br><br>
+<% if !user_signed_in? %>
+  <%= link_to 'Sign Up' , new_registration_path %> <br> <br>
+  <%= link_to 'Log In', new_session_path %><br>
+<% end %>

@@ -1,0 +1,50 @@
+
+/*
+.product-table {
+  border-collapse: collapse;
+  width: 35%; 
+  margin: 20px 0; 
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+
+.product-table th {
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.product-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.product-table tr:hover {
+  background-color: #f1f1f1;
+}
+*/
+
+.product-container {
+  display: flex; /* Display children elements horizontally */
+  flex-wrap: wrap; /* Wrap the items to the next row */
+}
+
+.product-box {
+  border: 1px solid #ccc; /* Border for the box */
+  padding: 10px; /* Padding inside the box */
+  margin-right: 20px; /* Spacing between boxes */
+  margin-bottom: 20px; /* Spacing between rows */
+  width: 103px; /* Width of each product box */
+  text-align: center;
+}
+.marg{
+  margin-left: 60px;
+}
+.show{
+  text-align: center;
+}
+

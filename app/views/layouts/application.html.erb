@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CloneSessionApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+
+    <%= render 'layouts/flash' %>
+  <div class= "app" > 
+    <% if user_signed_in? %>
+      <%= current_user.email %><br>
+      <%= link_to 'LOG OUT', signout_path , method: :delete %>
+    <% end %> 
+  </div><br>
+
+  <div class="app_link"> 
+    <% if user_signed_in? %>
+      <%= link_to ' PRODUCTS ', products_path %>
+      <%= link_to ' ORDERS ', buys_path %>
+    <% end %> 
+  </div>
+
+    <%= yield %>
+  </body>
+</html>
+
