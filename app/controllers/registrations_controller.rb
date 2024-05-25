@@ -3,7 +3,7 @@ class RegistrationsController < ApplicationController
   before_action :set_role, only: [:create]
      
   # skip_before_action :authenticate_user, only: [:new, :create]
-  # before_action :redirect_if_authenticated, only: [:new, :create] 
+  before_action :redirect_if_authenticated, only: [:new, :create] 
 
   def new
     @user = User.new

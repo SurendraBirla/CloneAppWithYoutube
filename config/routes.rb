@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # get 'home/index'
-
+  
   resources :registrations, only: [:new,:create]
   resources :sessions, only: [:new, :create]
   get 'signout', to: 'sessions#destroy'
@@ -10,6 +9,8 @@ Rails.application.routes.draw do
   post 'buys', to: 'buys#create'
 
   resources :buys, only: [:index,:cancel]
+
+  resources :videos, only: [:index]
 
   root to: 'home#index'
 

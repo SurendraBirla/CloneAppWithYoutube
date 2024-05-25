@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
     before_action :find_admin, only: [:create,:new, :destroy, :index, :show]
+    before_action :authenticate_user
 
     def index
     	@products = Product.all

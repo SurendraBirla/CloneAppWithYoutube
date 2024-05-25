@@ -1,0 +1,15 @@
+<h1>My YouTube Channel Videos</h1>
+
+<% if @videos.present? %>
+  <% @videos.each do |video| %>
+    <div class="video">
+      <h2><%= video.snippet.title %></h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.id.video_id %>" frameborder="0" allowfullscreen></iframe>
+      <p><%= video.snippet.description %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>No videos found.</p>
+<% end %>
+
+
